@@ -72,20 +72,5 @@ Options
 - `--samples`: File with a list of samples to include.
 
 
-## Dependencies
-This script relies on the following Python packages:
-
-- `numpy`
-- `pandas`
-- `statsmodels`
-- `vcf` (pyVCF)
-- `argparse`
-- `logging`
-
-Install the dependencies via `pip`:
-
-```bash
-pip install numpy pandas statsmodels pyVCF argparse logging
-```
 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
