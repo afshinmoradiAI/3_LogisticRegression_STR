@@ -17,6 +17,7 @@ python your_script_name.py --vcf example.vcf --out result --fam example.fam --mi
 
 ```
 In this example:
+
     --vcf example.vcf specifies the input VCF file.
     --out result sets the prefix for the output files.
     --fam example.fam specifies the FAM file with phenotype information.
