@@ -24,7 +24,8 @@ python STR_logetic_regression.py --vcf <input_vcf_file> --out <output_prefix>
 Here is an example command that runs the script with a sample VCF file:
 
 ```bash
-python STR_logetic_regression.py --vcf data/sample.vcf --out results/output
+python STR_logistic_regression.py --data_path /path/to/your/data.csv --output_dir /path/to/output --target_column target --test_size 0.3 --random_state 42 --solver lbfgs
+
 ```
 
 This command will generate output files like `results/output_summary.txt`, `results/output_detailed.txt`, and `results/output.log` in the specified directory.
