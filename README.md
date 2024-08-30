@@ -16,15 +16,12 @@ Use the following command to run the script:
 python your_script_name.py --vcf example.vcf --out result --fam example.fam --minmaf 0.05 --str-only --max-iter 200
 
 ```
-
-#### Arguments:
-
-    --vcf example.vcf specifies the input VCF file.
-    --out result sets the prefix for the output files.
-    --fam example.fam specifies the FAM file with phenotype information.
-    --minmaf 0.05 sets the minimum minor allele frequency (MAF) for filtering (optional).
-    --str-only ensures that only STRs are analyzed.
-    --max-iter 200 sets the maximum number of iterations for logistic regression (optional).
+--vcf example.vcf specifies the input VCF file.
+--out result sets the prefix for the output files.
+--fam example.fam specifies the FAM file with phenotype information.
+--minmaf 0.05 sets the minimum minor allele frequency (MAF) for filtering (optional).
+--str-only ensures that only STRs are analyzed.
+--max-iter 200 sets the maximum number of iterations for logistic regression (optional).
 
 Output Explanation
 
