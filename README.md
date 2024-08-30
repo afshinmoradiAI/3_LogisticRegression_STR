@@ -1,91 +1,60 @@
-How to Run the STR Logistic Regression Script
+STR Association Test Script
+This repository contains a Python script designed to perform Short Tandem Repeat (STR) association tests using logistic regression. The script is optimized for handling genotype data in VCF format and allows for the incorporation of phenotype and covariate data. It also supports conditioning on specific genomic positions and performing allele-based and allele-length-based tests.
+Features
+• VCF File Loading: The script loads VCF files and processes STR data.
+• Phenotype Data Handling: The script can load and process phenotype data from FAM or custom phenotype files.
+• Covariate Integration: Covariates can be added to the phenotype data to control for confounding factors.
+• Sample Filtering: Allows for inclusion or exclusion of specific samples based on an input file.
+• Conditioning: Supports conditioning on specific genomic positions to account for known associations.
+• Logistic Regression Association Testing: Performs logistic regression for association testing, with support for various allele-based and allele-length-based tests.
+• Output: Results are outputted in a tab-delimited format, suitable for downstream analysis.
+Dependencies
+The script requires the following Python libraries:
 
-To run the STR logistic regression script, follow the steps below:
+- numpy
+- pandas
+- statsmodels
+- vcf (PyVCF)
+- argparse
+- logging
+Installation
+To install the necessary dependencies, you can use the following command:
+pip install numpy pandas statsmodels PyVCF argparse
+Usage
+To run the script, use the following command in your terminal:
+python str_association.py --vcf <path_to_vcf_file> --out <output_file_prefix> --fam <fam_file> --covar <covar_file>
+Command-Line Arguments
+--vcf: Path to the input VCF file.
+--out: Prefix for the output file.
+--fam: FAM file containing phenotype information.
+--samples: File with a list of samples to include.
+--pheno: Custom phenotype file (to use instead of FAM).
+--covar: File containing covariate data.
+--covar-name: Names of covariates to include (comma-separated).
+--covar-number: Column numbers of covariates to include (comma-separated).
+--sex: Include sex as a covariate.
+--region: Process only this specific region (chrom:start-end).
+--minmaf: Minimum Minor Allele Frequency (MAF) for biallelic sites.
+--condition: Condition on this position (chrom:start).
+Example
+python str_association.py --vcf example.vcf --out results --fam example.fam --covar example.covar --region chr1:100000-200000
+Output
+The script outputs a tab-delimited file containing the results of the association tests. The columns include:
 
-### Prerequisites
-Ensure you have Python installed and the necessary Python packages. You can install the required packages using pip:
-
-```bash
-pip install numpy pandas statsmodels PyVCF
-```
-
-### Running the Script
-Use the following command to run the script:
-
-```bash
-python your_script_name.py --vcf example.vcf --out result --fam example.fam --minmaf 0.05 --str-only --max-iter 200
-
-```
-In this example:
-
-    --vcf example.vcf specifies the input VCF file.
-    --out result sets the prefix for the output files.
-    --fam example.fam specifies the FAM file with phenotype information.
-    --minmaf 0.05 sets the minimum minor allele frequency (MAF) for filtering (optional).
-    --str-only ensures that only STRs are analyzed.
-    --max-iter 200 sets the maximum number of iterations for logistic regression (optional).
-
-    
-Output Explanation
-
-### Output Files
-The script generates several output files with a prefix specified by the `--out` argument. These files might include:
-
-1. **Summary Statistics File** (`<output_prefix>_summary.txt` or similar):
-   - This file contains the summary statistics of the logistic regression tests performed for each STR. 
-   - Typical columns might include:
-     - **STR ID**: Identifier for the STR being tested.
-     - **P-value**: Significance level of the association test.
-     - **Odds Ratio (OR)**: The strength of association between the STR and the trait.
-     - **Confidence Intervals (CI)**: The range within which the true odds ratio is expected to fall.
-     - **Effect Size**: The estimated effect size of the STR on the trait.
-
-2. **Detailed Results File** (`<output_prefix>_detailed.txt` or similar):
-   - This file contains detailed logistic regression results for each STR, possibly including:
-     - **Log-Likelihood**: A measure of how well the model fits the data.
-     - **Coefficients**: The estimated coefficients for each predictor in the model.
-     - **Standard Errors**: The standard error of each coefficient estimate.
-     - **Z-scores**: The test statistic for each coefficient.
-     - **P-values**: The significance level of each coefficient.
-
-3. **Log File** (`<output_prefix>.log`):
-   - A log file that tracks the progress of the script's execution. It might include information about the number of STRs tested, any warnings or errors encountered during the run, and summary messages about the execution time and resource usage.
-
-### Understanding the Output
-
-1. **P-value**:
-   - A small p-value (typically ≤ 0.05) indicates strong evidence against the null hypothesis, suggesting that the STR is significantly associated with the trait.
-
-2. **Odds Ratio (OR)**:
-   - An OR greater than 1 suggests that the presence of a specific STR allele increases the likelihood of the trait.
-   - An OR less than 1 suggests that the STR allele decreases the likelihood of the trait.
-
-3. **Confidence Intervals (CI)**:
-   - If the confidence interval for the OR does not include 1, the association is considered statistically significant.
-
-### Example of Output Interpretation
-
-If you ran the script with the following command:
-
-```bash
-python STR_logetic_regression.py --vcf data/sample.vcf --out results/output
-```
-
-You might get output files like:
-
-- `results/output_summary.txt`
-- `results/output_detailed.txt`
-- `results/output.log`
-
-In the `output_summary.txt` file, a row might look like this:
-
-| STR_ID | P-value | OR   | CI_Lower | CI_Upper | Effect_Size |
-|--------|---------|------|----------|----------|-------------|
-| STR123 | 0.002   | 1.45 | 1.10     | 1.90     | 0.37        |
-
-**Interpretation**:
-- The STR `STR123` has a p-value of 0.002, indicating a statistically significant association with the trait.
-- The odds ratio (OR) is 1.45, meaning the presence of this STR allele is associated with a 45% increase in the likelihood of the trait.
-- The confidence interval (1.10 to 1.90) suggests that the true OR is likely to be within this range.
-- The effect size is 0.37, quantifying the magnitude of the association.
-
+- CHROM: Chromosome
+- BP: Base pair position
+- SNP: SNP identifier
+- P: p-value from the logistic regression
+- OR: Odds ratio
+- SE: Standard error
+- CI95: 95% confidence interval
+- MAF: Minor allele frequency
+- NMISS: Number of missing samples
+- ALLELE1: Reference allele
+- ALLELE2: Alternative allele
+Logging
+The script uses Python's built-in logging module to provide information about the processing steps. The logs include data loading, filtering, and association testing steps.
+License
+This project is licensed under the MIT License.
+Contact
+For questions or issues, please contact [your email] or create an issue on this repository.
