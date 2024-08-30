@@ -1,5 +1,5 @@
-STR Association Test Script
-Table of Contents
+- STR Association Test Script
+- Table of Contents
 Introduction
 Features
 Installation
