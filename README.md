@@ -26,16 +26,16 @@ To run the script, you need to have Python 3.x installed, along with the require
    ```
    Install the dependencies via `pip`:
 
-  ```bash
-  pip install numpy pandas statsmodels pyVCF argparse logging
-  ```
+   ```bash
+   pip install numpy pandas statsmodels pyVCF argparse logging
+   ```
  
 Usage
 To use the script, run it from the command line with the appropriate arguments:
 
-```bash
-python str_association_test.py --vcf input.vcf --fam input.fam --out results.txt --covar covariates.txt --region 1:10000-20000
-```
+  ```bash
+  python str_association_test.py --vcf input.vcf --fam input.fam --out results.txt --covar covariates.txt --region 1:10000-20000
+  ```
 
 ## Example Command
 
