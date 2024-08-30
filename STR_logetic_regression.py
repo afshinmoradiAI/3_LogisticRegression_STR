@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 """
-Perform STR association tests using logistic regression (default).
+Perform STR association tests using logistic regression.
 """
 
 # Constants
-MIN_STR_LENGTH = 8  # Minimum reference length for an STR
+MIN_STR_LENGTH = 6  # Minimum reference length for an STR
 
 # Imports
 import sys
