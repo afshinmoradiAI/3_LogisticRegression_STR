@@ -1,16 +1,17 @@
 - STR Association Test Script
 
--* Introduction
+- * Introduction
 - This script performs logistic regression-based association tests on STRs within a VCF file, considering various covariates and phenotype data. The results include odds ratios, p-values, confidence intervals, and more, making it a valuable tool for genetic association studies.
   
-- 1. *Features
+# Features
 - **VCF File Parsing:** Reads genetic variant data from VCF files.
 - **Phenotype Data Loading:** Supports loading phenotype data from FAM or custom phenotype files.
 - **Covariate Inclusion:** Allows adding covariates, including sex and cohort data, to the analysis.
 - **Sample Filtering:** Includes options to restrict or exclude specific samples from the analysis.
 - **Conditional Analysis:** Supports conditional logistic regression based on specific genetic variants.
 - **Multiple Test Types:** Performs allele-based and allele-length-based association tests.
-Installation
+
+# Installation
 To run the script, you need to have Python 3.x installed, along with the required dependencies.
 
 1. **Clone the repository:**
