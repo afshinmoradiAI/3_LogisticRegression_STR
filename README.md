@@ -1,17 +1,7 @@
 - STR Association Test Script
-- Table of Contents
-- Introduction
-- Features
-- Installation
-- Usage
-- Input Files
-- Output
-- Options
-- Dependencies
-- License
 
 ** Introduction
-This script performs logistic regression-based association tests on STRs within a VCF file, considering various covariates and phenotype data. The results include odds ratios, p-values, confidence intervals, and more, making it a valuable tool for genetic association studies.
+- This script performs logistic regression-based association tests on STRs within a VCF file, considering various covariates and phenotype data. The results include odds ratios, p-values, confidence intervals, and more, making it a valuable tool for genetic association studies.
 Features
 - **VCF File Parsing:** Reads genetic variant data from VCF files.
 - **Phenotype Data Loading:** Supports loading phenotype data from FAM or custom phenotype files.
