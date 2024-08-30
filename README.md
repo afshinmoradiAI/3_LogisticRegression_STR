@@ -13,7 +13,8 @@ pip install numpy pandas statsmodels PyVCF
 Use the following command to run the script:
 
 ```bash
-python STR_logetic_regression.py --vcf <input_vcf_file> --out <output_prefix>
+python your_script_name.py --vcf example.vcf --out result --fam example.fam --minmaf 0.05 --str-only --max-iter 200
+
 ```
 
 #### Arguments:
