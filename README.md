@@ -15,8 +15,9 @@ git clone https://github.com/your-username/STR-logistic-regression.git
 cd STR-logistic-regression
 
 2. **Run the script**:
+'''
 python STR_logetic_regression.py
-
-3. **Input Data**: Ensure your data is in the correct format as expected by the script. You may need to modify the data loading section to match your specific data format.
+'''
+4. **Input Data**: Ensure your data is in the correct format as expected by the script. You may need to modify the data loading section to match your specific data format.
 Data
 The script expects data in a CSV format with specific columns that correspond to the features used in the logistic regression model. Ensure that the data is clean and preprocessed as required.
