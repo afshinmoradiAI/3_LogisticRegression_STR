@@ -1,16 +1,16 @@
 - STR Association Test Script
 - Table of Contents
-Introduction
-Features
-Installation
-Usage
-Input Files
-Output
-Options
-Dependencies
-License
-Contributing
-Introduction
+- Introduction
+- Features
+- Installation
+- Usage
+- Input Files
+- Output
+- Options
+- Dependencies
+- License
+
+** Introduction
 This script performs logistic regression-based association tests on STRs within a VCF file, considering various covariates and phenotype data. The results include odds ratios, p-values, confidence intervals, and more, making it a valuable tool for genetic association studies.
 Features
 - **VCF File Parsing:** Reads genetic variant data from VCF files.
@@ -89,5 +89,3 @@ pip install numpy pandas statsmodels pyVCF argparse logging
 ```
 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-Contributing
-Contributions are welcome! Please fork the repository, make your changes, and submit a pull request. Ensure that your code follows the style and guidelines of the project.
